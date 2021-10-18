@@ -13,7 +13,10 @@
     "dist": "electron-builder",
     "make:linux": "electron-builder --linux",
     "make:macos": "electron-builder --mac",
-    "make:win": "electron-builder --win --x64"
+    "make:win": "electron-builder --win --x64",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=public/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . --overwrite --platform=win32 --arch=x64 --icon=public/icon.ico --prune=false --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Calculator\"",
+    "package-linux": "electron-packager . --overwrite --platform=linux --arch=x64 --icon=public/icon.png --prune=false --out=release-builds"
   },
   "author": "Shubham Tandale",
   "license": "ISC",
@@ -79,6 +82,7 @@
     "css-loader": "^4.2.2",
     "electron": "^10.1.1",
     "electron-builder": "^22.8.1",
+    "electron-packager": "^15.4.0",
     "electron-reload": "^1.5.0",
     "nodemon": "^2.0.13",
     "sass-loader": "^10.0.2",
